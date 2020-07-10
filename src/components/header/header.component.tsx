@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './header.styles.scss';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
@@ -9,9 +10,15 @@ const Header: React.FC = () => {
         <h1 className='logo'>B</h1>
       </div>
       <div className='links-contain'>
-        <p>Home</p>
-        <p>Search</p>
-        <p>Log In</p>
+        <Link className='link' to='/'>
+          Home
+        </Link>
+        <Link className='link' to='/search'>
+          Search
+        </Link>
+        <Link className='link' to='/login'>
+          Log In
+        </Link>
       </div>
     </div>
   );

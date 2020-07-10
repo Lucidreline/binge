@@ -5,6 +5,7 @@ import './App.css';
 
 import HomePage from './components/pages/home/home-page.component';
 import Header from './components/header/header.component';
+import SearchPage from './components/pages/search-page/search-page.component';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
+          <Route path='/search' component={SearchPage} />
         </Switch>
       </div>
     </div>

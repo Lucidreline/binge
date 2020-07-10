@@ -32,14 +32,14 @@ class HomePage extends Component<IProps, IState> {
 
   componentDidMount() {
     fetch(
-      `https://api.themoviedb.org/3/trending/movie/week?api_key=${env.TMDB_KEY}`
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${env.TMDB_KEY}`
     )
       .then((res) => res.json())
       .then((resJson: IResponce) => {
         this.setState({ trendingMovies: resJson.results });
       });
     fetch(
-      `https://api.themoviedb.org/3/trending/tv/week?api_key=${env.TMDB_KEY}`
+      `https://api.themoviedb.org/3/trending/tv/day?api_key=${env.TMDB_KEY}`
     )
       .then((res) => res.json())
       .then((resJson: IResponce) => {

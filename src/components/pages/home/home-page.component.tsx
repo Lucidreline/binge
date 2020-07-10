@@ -50,8 +50,8 @@ class HomePage extends Component<IProps, IState> {
   render() {
     return (
       <div className='home-page'>
-        {/* <GliderList results={this.state.trendingShows} /> */}
-        <GliderList results={this.state.trendingMovies} />
+        <GliderList title='Shows' results={this.state.trendingShows} />
+        <GliderList title='Movies' results={this.state.trendingMovies} />
       </div>
     );
   }

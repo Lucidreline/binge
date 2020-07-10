@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: #212121;
+  color: #fee1e1;
+  font-size: 62.5%;
+}
+
+.section-title {
+  color: white;
+  font-size: 4.5rem;
+  margin-bottom: 1.3rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+li,
+button,
+label,
+input,
+p {
+  font-size: 1.5rem;
+  color: #fee1e1;
+}
+p.marg-bottom {
+  margin-bottom: 1.2rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+h4,
+h5 {
+  font-size: 2.5rem;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}

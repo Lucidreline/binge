@@ -1,7 +1,12 @@
+@import 'react-alice-carousel/lib/scss/alice-carousel.scss';
+
 .glider-list {
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+  .title {
+    color: #f55948;
+  }
+  .list-contain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }

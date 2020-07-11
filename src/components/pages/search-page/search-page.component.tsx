@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+
 import env from '../../../env';
 import GliderList from '../../glider-list/glider-list.component';
+
+import './search-page.styles.scss';
 
 interface IProps {}
 
@@ -83,7 +86,12 @@ class SearchPage extends Component<IProps, IState> {
   render() {
     return (
       <div className='search-page'>
-        <input type='text' onChange={this.handleChange} placeholder='Search' />
+        <input
+          className='search-bar'
+          type='text'
+          onChange={this.handleChange}
+          placeholder='Search'
+        />
         <GliderList title='' results={this.state.movieResults} />
         <GliderList title='' results={this.state.showResults} />
       </div>

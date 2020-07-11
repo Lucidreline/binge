@@ -8,16 +8,22 @@ interface Props {
 }
 
 const GliderImage: React.FC<Props> = ({ poster_path }) => {
-  return (
-    <div className='glider-image'>
-      <div
-        className='image'
-        style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/w200${poster_path})`,
-        }}
-      ></div>
-    </div>
-  );
+  let image;
+  if (poster_path !== null) {
+    image = (
+      <div className='glider-image'>
+        <div
+          className='image'
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/w200${poster_path})`,
+          }}
+        ></div>
+      </div>
+    );
+  } else {
+    image = null;
+  }
+  return image;
 };
 
 export default GliderImage;

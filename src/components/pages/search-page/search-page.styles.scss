@@ -1,0 +1,14 @@
+.search-page {
+  .search-bar {
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 0.8rem 1.2rem;
+    &::placeholder {
+      color: white;
+      opacity: 1;
+    }
+    border-bottom: 2px solid #f55948;
+  }
+}

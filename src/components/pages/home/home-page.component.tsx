@@ -6,7 +6,6 @@ import GliderList from '../../glider-list/glider-list.component';
 interface IProps {}
 
 interface IState {
-  trendingMovies: IResult[];
   trendingShows: IResult[];
 }
 
@@ -25,19 +24,11 @@ class HomePage extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      trendingMovies: [],
       trendingShows: [],
     };
   }
 
   componentDidMount() {
-    fetch(
-      `https://api.themoviedb.org/3/trending/movie/day?api_key=${env.TMDB_KEY}`
-    )
-      .then((res) => res.json())
-      .then((resJson: IResponce) => {
-        this.setState({ trendingMovies: resJson.results });
-      });
     fetch(
       `https://api.themoviedb.org/3/trending/tv/day?api_key=${env.TMDB_KEY}`
     )
@@ -51,7 +42,6 @@ class HomePage extends Component<IProps, IState> {
     return (
       <div className='home-page'>
         <GliderList title='Shows' results={this.state.trendingShows} />
-        <GliderList title='Movies' results={this.state.trendingMovies} />
       </div>
     );
   }

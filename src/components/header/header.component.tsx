@@ -16,8 +16,8 @@ const Header: React.FC = () => {
         <Link className='link' to='/search'>
           Search
         </Link>
-        <Link className='link' to='/login'>
-          Log In
+        <Link className='link' to='/categories'>
+          Categories
         </Link>
       </div>
     </div>

@@ -9,26 +9,13 @@ interface IProps {}
 
 interface IState {
   searchField: string;
-  movieResults: IMovieResult[];
   showResults: IShowResult[];
-}
-
-interface IMovieResult {
-  title: string;
-  poster_path: string;
-  id: number;
-  [key: string]: any;
 }
 
 interface IShowResult {
   name: string;
   poster_path: string;
   id: number;
-  [key: string]: any;
-}
-
-interface IMovieResponce {
-  results: IMovieResult[];
   [key: string]: any;
 }
 
@@ -42,7 +29,6 @@ class SearchPage extends Component<IProps, IState> {
     super(props);
     this.state = {
       searchField: ' ',
-      movieResults: [],
       showResults: [],
     };
   }
@@ -51,18 +37,7 @@ class SearchPage extends Component<IProps, IState> {
     const searchField = this.formatSearch(e.currentTarget.value);
     this.setState({ searchField }, () => {
       this.addShowResultsToState();
-      this.addMovieResultsToState();
     });
-  };
-
-  addMovieResultsToState = (): void => {
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=${env.TMDB_KEY}&language=en-US&page=1&query=${this.state.searchField}&include_adult=false`
-    )
-      .then((res) => res.json())
-      .then((resJson: IMovieResponce) =>
-        this.setState({ movieResults: resJson.results })
-      );
   };
 
   addShowResultsToState = (): void => {
@@ -92,7 +67,6 @@ class SearchPage extends Component<IProps, IState> {
           onChange={this.handleChange}
           placeholder='Search'
         />
-        <GliderList title='' results={this.state.movieResults} />
         <GliderList title='' results={this.state.showResults} />
       </div>
     );
